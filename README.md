@@ -1,11 +1,24 @@
------ Students APIs For Beginner -----
+# Students APIs For Beginner
 
-1. Store Student
-Endpoint: {{base-url}}student/store
-Method: POST
-Body Request:
+This documentation provides information about the Students APIs for beginners. These APIs allow you to manage student records, including storing, retrieving, updating, and deleting student information.
+
+## Table of Contents
+
+1. [Store Student](#1-store-student)
+2. [Single Listing](#2-single-listing)
+3. [All Listing](#3-all-listing)
+4. [Update Student](#4-update-student)
+5. [Delete Student](#5-delete-student)
+
+---
+
+## 1. Store Student
+**Endpoint:** `{{base-url}}student/store`
+**Method:** POST
+**Body Request:**
 ![image](https://github.com/Yovan19/learn_apis/assets/124430108/35aebeac-2918-4ad8-88d2-27a7285cb757)
-Success Response:
+**Success Response:**
+```json
 {
     "status": "success",
     "code": 200,
@@ -25,8 +38,10 @@ Success Response:
         }
     }
 }
+```
 
-Error Response:
+**Error Response:**
+```json
 {
     "status": "error",
     "code": 401,
@@ -40,14 +55,15 @@ Error Response:
         ]
     }
 }
-
+```
 -----------------
-2. single listing
-Endpoint: {{base-url}}student/list/3
-Method: GET
-Body Request:
+## 2. single listing
+**Endpoint:** `{{base-url}}student/list/3`
+**Method:**  GET
+**Body Request:**
 ![image](https://github.com/Yovan19/learn_apis/assets/124430108/f4e969ee-a7f2-4bfa-ad3b-1770abd7443d)
-Success Response:
+**Success Response:**
+```json
 {
     "status": "success",
     "code": 200,
@@ -70,21 +86,25 @@ Success Response:
         ]
     }
 }
+```
 
-Error Response:
+**Error Response:**
+```json
 {
     "status": "error",
     "code": 401,
     "message": "Student Not found."
 }
+```
 
 -----------------
-3. All listing
-Endpoint: {{base-url}}student/list
-Method: GET
-Body Request:
+## 3. All listing
+**Endpoint:** `{{base-url}}student/list`
+**Method:**  GET
+**Body Request:**
 ![image](https://github.com/Yovan19/learn_apis/assets/124430108/372d8a73-cd52-4b64-90c5-ce40f267d418)
-Success Response:
+**Success Response:**
+```json
 {
     "status": "success",
     "code": 200,
@@ -120,14 +140,16 @@ Success Response:
         ]
     }
 }
+```
 
 -----------------
-4. update
-Endpoint: {{base-url}}student/update/2
-Method: POST
-Body Request:
+## 4. update
+**Endpoint:** `{{base-url}}student/update/2`
+**Method:** POST
+**Body Request:**
 ![image](https://github.com/Yovan19/learn_apis/assets/124430108/66ce655d-870b-49d2-810b-f0c0870dd19b)
-Success Response:
+**Success Response:**
+```json
 {
     "status": "success",
     "code": 200,
@@ -148,29 +170,36 @@ Success Response:
         }
     }
 }
+```
 
-Error Response:
+**Error Response:**
+```json
 {
     "status": "error",
     "code": 401,
     "message": "Student Not found."
 }
+```
 -----------------
-5. delete
-Endpoint: {{base-url}}student/delete/2
-Method: DELETE
-Body Request:
+## 5. delete
+**Endpoint:** `{{base-url}}student/delete/2`
+**Method:** DELETE
+**Body Request:**
 ![image](https://github.com/Yovan19/learn_apis/assets/124430108/299eaff9-3958-4df4-92f9-4486a4844fb8)
-Success Response:
+**Success Response:**
+```json
 {
     "status": "success",
     "code": 200,
     "message": "Student deleted successfully."
 }
+```
 
-Error Response:
+**Error Response:**
+```json
 {
     "status": "error",
     "code": 401,
     "message": "Student Not found."
 }
+```
