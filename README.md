@@ -1,64 +1,176 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+----- Students APIs For Beginner -----
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1. Store Student
+Endpoint: {{base-url}}student/store
+Method: POST
+Body Request:
+![image](https://github.com/Yovan19/learn_apis/assets/124430108/35aebeac-2918-4ad8-88d2-27a7285cb757)
+Success Response:
+{
+    "status": "success",
+    "code": 200,
+    "message": "Student Registered Successfully",
+    "data": {
+        "student": {
+            "first_name": "yovan",
+            "last_name": "patel",
+            "email": "yovan@yopmail.com",
+            "date_of_birth": "2000/08/11",
+            "gender": "Male",
+            "address": "surat, near ak road",
+            "phone_number": "8978455641",
+            "updated_at": "2023-08-19T09:31:00.000000Z",
+            "created_at": "2023-08-19T09:31:00.000000Z",
+            "id": 3
+        }
+    }
+}
 
-## About Laravel
+Error Response:
+{
+    "status": "error",
+    "code": 401,
+    "message": "Something went wrong.",
+    "errors": {
+        "email": [
+            "The email field is required."
+        ],
+        "date_of_birth": [
+            "The date of birth field is required."
+        ]
+    }
+}
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-----------------
+2. single listing
+Endpoint: {{base-url}}student/list/3
+Method: GET
+Body Request:
+![image](https://github.com/Yovan19/learn_apis/assets/124430108/f4e969ee-a7f2-4bfa-ad3b-1770abd7443d)
+Success Response:
+{
+    "status": "success",
+    "code": 200,
+    "message": "Student Listing",
+    "data": {
+        "student": [
+            {
+                "id": 3,
+                "first_name": "yovan",
+                "last_name": "patel",
+                "date_of_birth": "2000-08-11",
+                "gender": "Male",
+                "address": "surat, near ak road",
+                "phone_number": "8978455641",
+                "email": "yovan@yopmail.com",
+                "created_at": "2023-08-19T09:31:00.000000Z",
+                "updated_at": "2023-08-19T09:31:00.000000Z",
+                "deleted_at": null
+            }
+        ]
+    }
+}
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Error Response:
+{
+    "status": "error",
+    "code": 401,
+    "message": "Student Not found."
+}
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-----------------
+3. All listing
+Endpoint: {{base-url}}student/list
+Method: GET
+Body Request:
+![image](https://github.com/Yovan19/learn_apis/assets/124430108/372d8a73-cd52-4b64-90c5-ce40f267d418)
+Success Response:
+{
+    "status": "success",
+    "code": 200,
+    "message": "All Students Listing",
+    "data": {
+        "student": [
+            {
+                "id": 2,
+                "first_name": "yuvi",
+                "last_name": "patel",
+                "date_of_birth": "2010-08-11",
+                "gender": "Male",
+                "address": "surat, near fulpada",
+                "phone_number": "8978455645",
+                "email": "yuvi@yopmail.com",
+                "created_at": "2023-08-19T08:26:00.000000Z",
+                "updated_at": "2023-08-19T09:28:00.000000Z",
+                "deleted_at": null
+            },
+            {
+                "id": 3,
+                "first_name": "yovan",
+                "last_name": "patel",
+                "date_of_birth": "2000-08-11",
+                "gender": "Male",
+                "address": "surat, near ak road",
+                "phone_number": "8978455641",
+                "email": "yovan@yopmail.com",
+                "created_at": "2023-08-19T09:31:00.000000Z",
+                "updated_at": "2023-08-19T09:31:00.000000Z",
+                "deleted_at": null
+            }
+        ]
+    }
+}
 
-## Learning Laravel
+-----------------
+4. update
+Endpoint: {{base-url}}student/update/2
+Method: POST
+Body Request:
+![image](https://github.com/Yovan19/learn_apis/assets/124430108/66ce655d-870b-49d2-810b-f0c0870dd19b)
+Success Response:
+{
+    "status": "success",
+    "code": 200,
+    "message": "Student Updated Successfully",
+    "data": {
+        "student": {
+            "id": 2,
+            "first_name": "yuvi",
+            "last_name": "patel",
+            "date_of_birth": "2010/08/11",
+            "gender": "Male",
+            "address": "surat, near fulpada",
+            "phone_number": "8978455645",
+            "email": "yuvi@yopmail.com",
+            "created_at": "2023-08-19T08:26:00.000000Z",
+            "updated_at": "2023-08-19T09:39:00.000000Z",
+            "deleted_at": null
+        }
+    }
+}
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Error Response:
+{
+    "status": "error",
+    "code": 401,
+    "message": "Student Not found."
+}
+-----------------
+5. delete
+Endpoint: {{base-url}}student/delete/2
+Method: DELETE
+Body Request:
+![image](https://github.com/Yovan19/learn_apis/assets/124430108/299eaff9-3958-4df4-92f9-4486a4844fb8)
+Success Response:
+{
+    "status": "success",
+    "code": 200,
+    "message": "Student deleted successfully."
+}
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Error Response:
+{
+    "status": "error",
+    "code": 401,
+    "message": "Student Not found."
+}
